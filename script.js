@@ -36,12 +36,15 @@ const otherArray = [
   'مع عامل',
   'مع عنصر امن',
   'مع عنصر دفاع مدني',
+  'مع شخص غير سوري',
   'نظارة على راسه'
 ];
 
-while (itemsInput.length < 24) {
+while (itemsInput.length < 24 && itemsInput.length < otherArray.length) {
   const randomItem = otherArray[Math.floor(Math.random() * otherArray.length)];
-  itemsInput.push(`${randomItem}`);
+  if (!itemsInput.includes(randomItem)) {
+    itemsInput.push(randomItem);
+  }
 }
 
   // If there are more than 24 items, pick the first 24
